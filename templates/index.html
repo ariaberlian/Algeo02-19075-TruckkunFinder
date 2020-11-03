@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truck-kun Finder</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1 class="text-center">Truck-kun Finder</h1>
+    <br>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="document">Upload dokumen</label>
+        <input type="file" name="document" id="document" multiple>
+        <button type="submit">Upload</button>
+    </form>
+    <form action="" method="get">
+        <input type="text" placeholder="Cari bacaan..." aria-label="Search" name="q" id="search">
+        <button type="submit">Cari</button>
+    </form>
+    <H2>Hasil:</H2>
+    <br>
+    <a href=""><h3>Lisa Onee-san Terbaik</h3></a>
+    <small>Jumlah kata: 55    Tingkat Kemiripan : 95%</small>
+    <p>Tidak diragukan lagi, Lisa adalah onee-san ara-ara terbaik.</p>
+    <br><br><br>
+    <h1>Tabel kebenaran</h1>
+    <hr>
+    <a href="">Concepto</a>
+    <a href="">How to use</a>
+    <a href="">About Us</a>
+</body>
+</html>
