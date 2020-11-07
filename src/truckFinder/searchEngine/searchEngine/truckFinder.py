@@ -7,8 +7,9 @@ import re
 import string
 from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
 
-# from stemming import stemming
+# from .stem import stemming
 # from .file_handle import webscrap,file_peek,file_read
+
 # nltk.download()
 
 folderDokumen = '../../media/'
@@ -76,11 +77,7 @@ def truckFinder(string):
     # vektorDokumen[0 sampai n-1 buah file]: vektor yang berisi sebanyak k buah elemen yang masing masing memiliki nilai = jumlah pengulangan semua kata di dokumen relatif terhadap term
 
     totalFiles = 0
-    # for base, dirs, files in os.walk(folderDokumen):
-    #     print('Searching in : ', base)
-    #     for Files in files:
-    #         totalFiles += 1
-
+  
     query = stemming(string)
     print(query)
 
@@ -89,7 +86,7 @@ def truckFinder(string):
     for filename in os.listdir(folderDokumen):
         if filename.endswith(".txt") or filename.endswith(".html"):
             listDok.append([])
-            listDok[totalFiles].append(filename)
+            listDok[totalFiles].append(filename)  # listDok[i][0]
 
             if filename.endswith(".txt"):
                 # Membuka dokemen
@@ -101,11 +98,10 @@ def truckFinder(string):
 
             # Menambahkan dan menToken isi file (line) kedalam array
             stemDok = stemming(dokumen)
-            listDok[totalFiles].append(stemDok)
+            listDok[totalFiles].append(stemDok)  # listDok[i][1]
 
             print(listDok[totalFiles][1])
-            # listDok[0..n-1][0-1]
-            # (0 = nama file; 1 = array tertoken)
+     
             totalFiles += 1
         else:
             continue
@@ -128,7 +124,7 @@ def truckFinder(string):
         tempL2 = [0 for j in range(len(termArray))]
 
         for w in listDok[i][1]:
-            tempL1[kamus[w]] += 1
+            tempL1[kamus[w]] += 1  # menginkremen vektor dengan indeks dari dictionary
         for w in query:
             tempL2[kamus[w]] += 1
 
@@ -144,23 +140,8 @@ def truckFinder(string):
 
         cosine = c / float((sum(tempL1) * sum(tempL2)) ** 0.5)
 
-        listDok[i].append(cosine)
-        print("similarity: ", cosine)
+        listDok[i].append(cosine)  # listDok[i][2]
 
-    print('Total number of files', totalFiles)
-
-    for i in range(totalFiles):
-        print(vectorDokumen[i])
-
-    print(vektorQuery)
-    print(termArray)
-    # c = 0
-    #
-    # # cosine formula
-    # for i in range(len(rvector)):
-    #     c += l1[i] * l2[i]
-    # cosine = c / float((sum(l1) * sum(l2)) ** 0.5)
-    # print("similarity: ", cosine)
     return listDok, termArray, vektorQuery, vectorDokumen
 
 
