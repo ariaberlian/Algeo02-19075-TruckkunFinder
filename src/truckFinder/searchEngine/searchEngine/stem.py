@@ -5,7 +5,7 @@ from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFacto
 import nltk
 # nltk.download()
 
-def stem(dokumen):
+def stemming(dokumen):
     #Fungsi untuk membersihkan dokumen
     #Menerima dokumen bertipe string
     #Mengembalikan array hasil filter,stemming dan tokenizing
