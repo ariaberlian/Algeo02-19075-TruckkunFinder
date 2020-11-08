@@ -13,7 +13,8 @@ def index(request):
     else:
         query = request.GET.get('q', '')
         listDok, termArray, vektorQuery, vektorDokumen, tabelFrekuensi = truckFinder(query)
-        listDok = sorted(listDok, key=lambda x: -x[4])
+        if query:
+            listDok = sorted(listDok, key=lambda x: -x[4])
         print(listDok[0])
         context = {
             'List': listDok,
@@ -23,3 +24,14 @@ def index(request):
             'Table':tabelFrekuensi,
         }
         return render(request, "index.html", context)
+
+def about(request):
+    return render(request, "about.html")
+
+def concept(request):
+    return render(request, "concept.html")
+    
+def how_to_use(request):
+    return render(request, "howto.html")
+
+
