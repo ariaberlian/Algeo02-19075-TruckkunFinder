@@ -5,36 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Truck-kun Finder</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1 class="text-center">Truck-kun Finder</h1>
+    
+    <h1 class="mt-3 text-center mb-3">Truck-kun Finder</h1>
+    <form action="" method="get">
+        <div class="form-row mt-4" style="width: 80%; margin: auto;">
+            <input type="text" placeholder="Cari dokumen..." aria-label="Search" name="q" id="search" class="col-11 form-control-lg">
+            <button type="submit" class="col-1 btn btn-dark">Cari</button>
+        </div>
+    </form>
+   
     <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <div class="form-group">
-            <label for="document">Upload dokumen</label>
-            <input type="file" name="document" id="document" class="form-control-file" multiple>
+        <div class="text-center">
+            <a class="dropdown-toggle text-info" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Upload dokumen
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                 <input type="file" name="document" id="document" class="ml-1" style ="display: inline;" multiple>
+                 <button type="submit" class="btn btn-dark btn-sm mr-2">Upload</button>
+            </div>
+
         </div>
-        <button type="submit" class="btn btn-secondary">Upload</button>
     </form>
-    <form action="" method="get">
-        <input type="text" placeholder="Cari bacaan..." aria-label="Search" name="q" id="search">
-        <button type="submit">Cari</button>
-    </form>
-    
+
     {% if request.GET.q %}
-        
-    <H2>Hasil:</H2>
+    <div class="container mt-3 bg-white shadow">
     {% for dokumen in List %}
-        
-    <a href="media/{{ dokumen.0 }}"><h3>{{ dokumen.2.0 }}</h3></a>
-    <small>Jumlah kata: {{ dokumen.1 }} | Tingkat Kemiripan : {% widthratio dokumen.4 1 100 %}%</small>
-    <p>{{ dokumen.2.1 }}</p>
-    <br>
+    <div class="bg-white shadow-sm mt-1 mb-1 p-1">
+        <h4><a href="media/{{ dokumen.0 }}" data-toggle="tooltip" data-placement="right" title="Jumlah kata: {{ dokumen.1 }} | Tingkat Kemiripan : {% widthratio dokumen.4 1 100 %}%">{{ dokumen.2.0 }}</a></h4>
+        <!-- <small>Jumlah kata: {{ dokumen.1 }} | Tingkat Kemiripan : {% widthratio dokumen.4 1 100 %}%</small> -->
+        <p>{{ dokumen.2.1 }}</p>
+    </div>
     {% endfor %}
     
-    <h1>Tabel Terms</h1>
-    <table>
+    <h4 class="mt-3">Tabel Terms</h4>
+    <table class="table table-bordered mb-3">
         <tr>
             <th>Term</th>
             <th>Query</th>
@@ -53,16 +62,19 @@
                 
         </tr>
         {% endfor %}
-    </table>   
-        
+    </table>  
+    </div>
+
+    <div class="text-center mb-3">
+    {% else %}
+    <div class="text-center mb-3" style="position: relative;top: 340px;">
     {% endif %}
-    
-    
-    <hr>
-    <a href="/home">Home</a>
-    <a href="/concept">Concepto</a>
-    <a href="/howto">How to use</a>
-    <a href="/about">About Us</a>
+        <hr>
+        <a href="/home" class="mr-2">Home</a>
+        <a href="/concept" class="mr-2 ml-2">Concepto</a>
+        <a href="/howto" class="mr-2 ml-2">How to Use</a>
+        <a href="/about" class="ml-2">About Us</a>
+    </div>
         
 </body>
 </html>
