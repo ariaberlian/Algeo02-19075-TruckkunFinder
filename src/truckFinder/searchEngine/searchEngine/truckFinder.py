@@ -76,11 +76,9 @@ def truckFinder(string):
     # vektorQuery: vektor yang berisi sebanyak k buah elemen yang masing masing memiliki nilai = jumlah pengulangan semua di query relatif terhadap term
     # vektorDokumen[0 sampai n-1 buah file]: vektor yang berisi sebanyak k buah elemen yang masing masing memiliki nilai = jumlah pengulangan semua kata di dokumen relatif terhadap term
     # tableFrekunsi[0-k buah term][0-n+1 buah file]
+    
     totalFiles = 0
-  
     query = stemming(string)
-    print(query)
-
     listDok = []
 
     for filename in os.listdir(folderDokumen):
