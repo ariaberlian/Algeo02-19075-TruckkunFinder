@@ -9,33 +9,59 @@
 </head>
 <body>
     <h1 class="text-center">Truck-kun Finder</h1>
-    <br>
     <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <label for="document">Upload dokumen</label>
-        <input type="file" name="document" id="document" multiple>
-        <button type="submit">Upload</button>
+        <div class="form-group">
+            <label for="document">Upload dokumen</label>
+            <input type="file" name="document" id="document" class="form-control-file" multiple>
+        </div>
+        <button type="submit" class="btn btn-secondary">Upload</button>
     </form>
     <form action="" method="get">
         <input type="text" placeholder="Cari bacaan..." aria-label="Search" name="q" id="search">
         <button type="submit">Cari</button>
     </form>
+    
+    {% if request.GET.q %}
+        
     <H2>Hasil:</H2>
+    {% for dokumen in List %}
+        
+    <a href="media/{{ dokumen.0 }}"><h3>{{ dokumen.2.0 }}</h3></a>
+    <small>Jumlah kata: {{ dokumen.1 }} | Tingkat Kemiripan : {% widthratio dokumen.4 1 100 %}%</small>
+    <p>{{ dokumen.2.1 }}</p>
     <br>
-    <a href=""><h3>Lisa Onee-san Terbaik</h3></a>
-    <small>Jumlah kata: 55    Tingkat Kemiripan : 95%</small>
-    <p>Tidak diragukan lagi, Lisa adalah onee-san ara-ara terbaik.</p>
-    <br><br><br>
-    <h1>Tabel kebenaran</h1>
+    {% endfor %}
+    
+    <h1>Tabel Terms</h1>
+    <table>
+        <tr>
+            <th>Term</th>
+            <th>Query</th>
+            {% for dokumen in List %}
+                <th>{{ dokumen.2.0 }}</th>
+            {% endfor %}
+                
+        </tr>
+        
+        {% for rowval in Table %}
+        <tr>
+            
+            {% for val in rowval %}
+                <td>{{ val }}</td>
+            {% endfor %}
+                
+        </tr>
+        {% endfor %}
+    </table>   
+        
+    {% endif %}
+    
+    
     <hr>
     <a href="">Concepto</a>
     <a href="">How to use</a>
     <a href="">About Us</a>
-    
-    {% for j in judul %}
-    <h1>{{judul}}</h1>
-    <h1>{{kalimat_pertama}}</h1>
-    {% endfor %}
         
 </body>
 </html>

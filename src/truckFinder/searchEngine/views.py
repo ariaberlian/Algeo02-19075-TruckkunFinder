@@ -1,10 +1,9 @@
 from django.shortcuts import render, redirect
 from django.core.files.storage import FileSystemStorage
-# from .searchEngine import file_handle, stem
+from .searchEngine.truckFinder import truckFinder
 
 
 def index(request):
-    context = {}
     if request.method == 'POST':
         uploaded_files = request.FILES.getlist('document')
         for f in uploaded_files:
@@ -12,4 +11,15 @@ def index(request):
             fs.save(f.name, f)
         return redirect('search:index')
     else:
+        query = request.GET.get('q', '')
+        listDok, termArray, vektorQuery, vektorDokumen, tabelFrekuensi = truckFinder(query)
+        listDok = sorted(listDok, key=lambda x: -x[4])
+        print(listDok[0])
+        context = {
+            'List': listDok,
+            'Terms': termArray,
+            'VektorQuery': vektorQuery,
+            'VektorDokumen': vektorDokumen,
+            'Table':tabelFrekuensi,
+        }
         return render(request, "index.html", context)
