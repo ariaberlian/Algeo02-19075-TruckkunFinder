@@ -70,12 +70,12 @@ def stemming(dokumen):
 
 def truckFinder(string):
     # menerima input string kata-kata(query)
-    # output tupple: <listDok, termArray, vektorQuery, vectorDokumen>
+    # output tupple: <listDok, termArray, vektorQuery, vectorDokumen. tableFrekuensi>
     # listDok[0 sampai n-1 buah file][0-2; 0: nama file, 1: list isi dari dokumen yang tertoken, 2: kosinus similarity]
     # termArray[0 sampai k-1 buah semua kata dari seluruh dokumen]
     # vektorQuery: vektor yang berisi sebanyak k buah elemen yang masing masing memiliki nilai = jumlah pengulangan semua di query relatif terhadap term
     # vektorDokumen[0 sampai n-1 buah file]: vektor yang berisi sebanyak k buah elemen yang masing masing memiliki nilai = jumlah pengulangan semua kata di dokumen relatif terhadap term
-
+    # tableFrekunsi[0-k buah term][0-n+1 buah file]
     totalFiles = 0
   
     query = stemming(string)
@@ -99,8 +99,6 @@ def truckFinder(string):
             # Menambahkan dan menToken isi file (line) kedalam array
             stemDok = stemming(dokumen)
             listDok[totalFiles].append(stemDok)  # listDok[i][1]
-
-            print(listDok[totalFiles][1])
      
             totalFiles += 1
         else:
@@ -111,11 +109,11 @@ def truckFinder(string):
 
     termArray = query
     for i in range(totalFiles):
-        vectorDokumen.append([])
-        termArray = sorted(list(set(termArray) | set(listDok[i][1])))
+        vectorDokumen.append([])    # membuat totalFiles jumlah buah vektor dokumen
+        termArray = sorted(list(set(termArray) | set(listDok[i][1])))   # merekursif union sehinga terbentuk term array
 
     kamus = {}
-    for i in range(len(termArray)):
+    for i in range(len(termArray)):    # membuat kamus dari term array dengan value adalah indeksnya
         kamus[termArray[i]] = i
 
     for i in range(totalFiles):
@@ -141,7 +139,17 @@ def truckFinder(string):
         cosine = c / float((sum(tempL1) * sum(tempL2)) ** 0.5)
 
         listDok[i].append(cosine)  # listDok[i][2]
+        
+    tableFrekuensi = [["" for j in range(totalFiles+2)] for i in range(len(termArray))] # inisiasi table frekuensi
+    for i in range(len(termArray)):
+        for j in range(totalFiles+2):
+            if j == 0:
+                tableFrekuensi[i][j] = termArray[i]
+            elif j == 1:
+                tableFrekuensi[i][j] = str(vektorQuery[i])
+            else:
+                tableFrekuensi[i][j] = str(vectorDokumen[j-2][i])
 
-    return listDok, termArray, vektorQuery, vectorDokumen
+    return listDok, termArray, vektorQuery, vectorDokumen, tableFrekuensi
 
 
