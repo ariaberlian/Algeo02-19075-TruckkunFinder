@@ -41,7 +41,7 @@ def truckFinder(string):
                 dokumen = file.read().replace("\n", " ").lower()
                 file.close()
             else:
-                dokumen = webscrap(filename)
+                dokumen = webscrap(folderDokumen + filename)
 
             #Menghitung jumlah kata
             lenDok = len(dokumen.split())
