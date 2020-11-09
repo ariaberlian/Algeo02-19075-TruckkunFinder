@@ -22,13 +22,20 @@ Add more general information about project. What the purpose of the project is? 
 * Python - version 3.7
 * HTML - version 5
 * Bootstrap - version 4.5
+* Sastrawi - version 1.0.1
+* Nltk - version 3.5
+* Beautifulsoup4 - version 4.9.3
 
 ## Setup
+Dengan asumsi pengguna sudah menginstall python:
 1. Masuk ke folder src/truckFinder
 2. Buka command prompt di folder tersebut
 3. ketikkan "pip install -r requirements.txt"
-4. ketikkan "python manage.py runserver"
-5. buka browser dan masukan url "http://localhost:8000/" atau "http://127.0.0.1:8000/"
+4. ketikkan "python"
+5. ketikkan "import nltk"
+6. ketikkan "nltk.download()" lalu unduh semua berkas
+7. ketikkan "python manage.py runserver"
+8. buka browser dan masukan url "http://localhost:8000/" atau "http://127.0.0.1:8000/"
 
 ## Code Examples
 Show examples of usage:
