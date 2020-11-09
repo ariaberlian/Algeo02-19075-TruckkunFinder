@@ -95,7 +95,11 @@ def truckFinder(string):
         if query:
             cosine = c / float((sum(tempL1) * sum(tempL2)) ** 0.5)
             listDok[i].append(cosine)  # listDok[i][4]
+            listDok[i].append(vectorDokumen[i])     # listDok[i][5]
 
+    if query:
+        listDok = sorted(listDok, key=lambda x: -x[4])
+        
     newQuery = list(set(query))  # menghilangkan yang double
     k = 0
     tableFrekuensi = [["" for j in range(totalFiles + 2)] for i in range(len(newQuery))]
