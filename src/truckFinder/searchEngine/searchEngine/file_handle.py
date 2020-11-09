@@ -20,6 +20,7 @@ def file_peek(filename):
         while (fkal == '\n'):
             fkal = f.readline()
         fkal = fkal.rstrip()
+        fkal = fkal.partition('.'or'!'or'?')[0]
         f.close()
     else:
         f = open(filename, "r")

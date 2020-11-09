@@ -1,3 +1,4 @@
 Petualangan Ikan Terbang
 
-Ada ikan, bisa terbang, dan ada petualangan. Selesai.
+Ada ikan, bisa terbang, dan ada petualangan. 
+Selesai.
