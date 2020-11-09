@@ -13,8 +13,7 @@ def index(request):
     else:
         query = request.GET.get('q', '')
         listDok, termArray, vektorQuery, vektorDokumen, tabelFrekuensi = truckFinder(query)
-        if query:
-            listDok = sorted(listDok, key=lambda x: -x[4])
+
         print(listDok[0])
         context = {
             'List': listDok,
