@@ -63,7 +63,7 @@ def truckFinder(string):
     vectorDokumen = []
     vektorQuery = []
 
-    termArray = query
+    termArray = query.copy()
     for i in range(totalFiles):
         vectorDokumen.append([])
         termArray = sorted(list(set(termArray) | set(listDok[i][3] )))
@@ -96,15 +96,20 @@ def truckFinder(string):
             cosine = c / float((sum(tempL1) * sum(tempL2)) ** 0.5)
             listDok[i].append(cosine)  # listDok[i][4]
 
-    tableFrekuensi = [["" for j in range(totalFiles+2)] for i in range(len(termArray))]
-    for i in range(len(termArray)):
-        for j in range(totalFiles+2):
-            if j == 0:
-                tableFrekuensi[i][j] = termArray[i]
-            elif j == 1:
-                tableFrekuensi[i][j] = str(vektorQuery[i])
-            else:
-                tableFrekuensi[i][j] = str(vectorDokumen[j - 2][i])
+    newQuery = list(set(query))  # menghilangkan yang double
+    k = 0
+    tableFrekuensi = [["" for j in range(totalFiles + 2)] for i in range(len(newQuery))]
+    for w in termArray:
+        if w in newQuery:
+            for j in range(totalFiles+2):
+                if j == 0:
+                    tableFrekuensi[k][j] = termArray[kamus[w]]
+                elif j == 1:
+                    tableFrekuensi[k][j] = str(vektorQuery[kamus[w]])
+                else:
+                    tableFrekuensi[k][j] = str(vectorDokumen[j - 2][kamus[w]])
+            k += 1
+
 
     return listDok, termArray, vektorQuery, vectorDokumen, tableFrekuensi
 
