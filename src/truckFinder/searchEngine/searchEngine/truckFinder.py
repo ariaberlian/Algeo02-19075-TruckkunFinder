@@ -111,7 +111,7 @@ def truckFinder(string):
                 elif j == 1:
                     tableFrekuensi[k][j] = str(vektorQuery[kamus[w]])
                 else:
-                    tableFrekuensi[k][j] = str(vectorDokumen[j - 2][kamus[w]])
+                    tableFrekuensi[k][j] = str(listDok[j - 2][5][kamus[w]])
             k += 1
 
 
