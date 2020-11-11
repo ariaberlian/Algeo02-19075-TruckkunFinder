@@ -43,26 +43,29 @@
     {% endfor %}
     
     <h4 class="mt-3">Tabel Terms</h4>
-    <table class="table table-bordered mb-3">
-        <tr>
-            <th>Term</th>
-            <th>Query</th>
-            {% for dokumen in List %}
-                <th>{{ dokumen.2.0 }}</th>
-            {% endfor %}
-                
-        </tr>
-        
-        {% for rowval in Table %}
-        <tr>
+    <div class="overflow-auto">
+
+        <table class="table table-bordered mb-3">
+            <tr>
+                <th>Term</th>
+                <th>Query</th>
+                {% for dokumen in List %}
+                    <th>{{ dokumen.2.0 }}</th>
+                {% endfor %}
+                    
+            </tr>
             
-            {% for val in rowval %}
-                <td>{{ val }}</td>
-            {% endfor %}
+            {% for rowval in Table %}
+            <tr>
                 
-        </tr>
-        {% endfor %}
-    </table>  
+                {% for val in rowval %}
+                    <td>{{ val }}</td>
+                {% endfor %}
+                    
+            </tr>
+            {% endfor %}
+        </table>  
+        </div>
     </div>
 
     <div class="text-center mb-3">

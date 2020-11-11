@@ -12,16 +12,17 @@ def index(request):
         return redirect('search:index')
     else:
         query = request.GET.get('q', '')
-        listDok, termArray, vektorQuery, vektorDokumen, tabelFrekuensi = truckFinder(query)
-
-        print(listDok[0])
-        context = {
-            'List': listDok,
-            'Terms': termArray,
-            'VektorQuery': vektorQuery,
-            'VektorDokumen': vektorDokumen,
-            'Table':tabelFrekuensi,
-        }
+        if query:
+            listDok, termArray, vektorQuery, vektorDokumen, tabelFrekuensi = truckFinder(query)
+            context = {
+                'List': listDok,
+                'Terms': termArray,
+                'VektorQuery': vektorQuery,
+                'VektorDokumen': vektorDokumen,
+                'Table':tabelFrekuensi,
+            }
+        else:
+            context ={}
         return render(request, "index.html", context)
 
 def about(request):
