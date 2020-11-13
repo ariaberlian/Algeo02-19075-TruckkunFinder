@@ -1,0 +1,181 @@
+html {
+    height: 100%;
+}
+body{
+    margin: 0px;
+
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.nav-wrapp {
+    display: flex;
+    justify-content: space-between;
+    padding: 38px;
+    background-color: rgb(44, 44, 44);
+}
+
+.left-side {
+    display: flex;
+}
+.right-side{
+    font-family: Cambria;
+    color: white;
+}
+
+.nav-wrapp > .left-side > div {
+    margin-right: 20px;
+    font-size: 0.9 em;
+    text-transform: uppercase;
+    font-family: Helvetica, sans-serif;
+}
+
+.nav-link-wrapper {
+    height: 22px;
+    border-bottom: 1px solid transparent;
+    transition:  border-bottom 0.5s;
+}
+
+.nav-link-wrapper a{
+    color: #5e7edd;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.nav-link-wrapper:hover{
+    border-bottom: 1px solid white;
+}
+
+.nav-link-wrapper a:hover{
+    color: white;
+}
+
+.items-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.item-wrapper {
+    position: relative;
+
+}
+
+.item-img{
+    height: 1100px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.img-text-wrapper{
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+
+.img-text-wrapper .profpic-wrapper img{
+    transition: 1s;
+    opacity: 0%;
+    margin-bottom: 30px;
+    height: 400px;
+    
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+
+.img-text-wrapper:hover .profpic-wrapper img {
+    font-weight: 1000;
+    opacity: 100%;
+    margin-bottom: 30px;
+    height: 400px;
+    
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.logo-wrapper img{
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.img-text-wrapper .subtitle {
+    font-weight: 600;
+    transition: 1.5s;
+    color: transparent;
+    font-size: larger;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+.img-text-wrapper:hover .subtitle {
+    font-weight: 600;
+    color: lightseagreen;
+    font-size: larger;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+
+.img-darken {
+    transition: 0.7s;
+    filter: brightness(10%);
+}
+
+/* how to */
+
+
+/* indeks */
+.containerr {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(44, 44, 44);
+    
+
+}
+.footer > .left-side > div {
+    margin-right: 20px;
+    font-size: 0.9 em;
+    text-transform: uppercase;
+}
+
+.footer-link-wrapper a{
+    color: #5e7edd;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.footer-link-wrapper:hover{
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.footer-link-wrapper a:hover{
+    color: rgb(255, 255, 255);
+}

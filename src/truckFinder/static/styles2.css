@@ -1,0 +1,144 @@
+html { 
+    background: url(../static/background-image.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+body{
+    margin: 0x;
+    /* background-image: url(../static/background-image.jpg); */
+   
+}
+
+.containerr {
+    display: grid;
+    grid-template-columns: 1fr;
+    
+}
+
+.footerr {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    
+    width: 100%;
+    background-color: rgb(44, 44, 44);
+    
+
+}
+
+.left-side {
+    display: flex;
+}
+.right-side{
+    font-family: Cambria;
+    color: white;
+}
+
+
+.footerr > .left-side > div {
+    margin-right: 20px;
+    font-size: 0.9 em;
+    text-transform: uppercase;
+
+
+}
+
+.footer-link-wrapper {
+    height: 22px;
+    
+    /* border-bottom: 1px solid transparent !important; */
+    transition:  border-bottom 0.5s;
+}
+
+.footer-link-wrapper a{
+    color: #5e7edd;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+/* .footer-link-wrapper:hover{
+    border-bottom: 1px solid white !important   ;
+} */
+
+
+.footer-link-wrapper a:hover{
+    color: white;
+}
+
+.items-wrapper {
+    position: relative;
+}
+
+.item-wrapper {
+    width: 100%;
+    display: flex;
+    
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    
+}
+
+
+.logo-wrapper img{
+    display: block;
+    width: 20%;
+    margin-bottom: 15px;
+    
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+.text-wrapper{
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 100%;
+    margin-top: auto;
+    /* flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+ 
+    text-align: center;
+   
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto; */
+    
+
+}
+
+/* 
+.item-img{
+    width: 100%;
+    height: 1100px;
+    background-size: cover;
+
+    background-repeat: no-repeat;
+    vertical-align: auto;
+    
+    
+} */
+
+.kontainer {
+    /* display: flex; */
+    position: relative;
+    /* flex-direction: column;
+    width: 100%;
+    top: ;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    justify-content: center;
+    align-items: center; */
+}
