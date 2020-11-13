@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="nav-wrapp">
+            <div class="left-side">
+                <div class="nav-link-wrapper">
+                    <a href="/">Home</a>
+                </div>
+                <div class="nav-link-wrapper">
+                    <a href="/concept" style="color:white;">Concept</a>
+                </div>
+                <div class="nav-link-wrapper">
+                    <a href="/howto">How to Use</a>
+                </div>
+                <div class="nav-link-wrapper">
+                    <a href="/about" >About Us</a>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="brand">
+                    <div>JUAN LOUIS & ARIA</div>  
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="items-wrapper">
+                <div class="item-wrapper">
+                    <div class="item-img1" style="background-image:url(../static/link-start.gif)"></div>
+                    <div class="img-text-wrapper">
+                        <div class="profpic-wrapper">
+                            <img src="{% static 'informationret.png' %}" alt="">
+                        </div>
+                        <div class="logo-wrapper">
+                            <img src="{% static 'logo-infor.png' %}" alt="Aria">
+                        </div>
+                        <div class="subtitle">
+                            Secara umum, search-engine seperti google melakukan tugasnya dengan teknik temu kembali informasi. Information Retrieval  ilmu yang mempelajari prosedur-prosedur dan metode-metode untuk menemukan kembali informasi yang tersimpan dari berbagai sumber (resources) yang relevan atau koleksi sumber informasi yang dicari atau dibutuhkan. Dengan tindakan index (indexing), panggilan (searching), pemanggilan data kembali (recalling).
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-wrapper">
+                    <div class="item-img1" style="background-image:url(../static/truck-kun.gif)"></div>
+                    <div class="img-text-wrapper">
+                        <div class="profpic-wrapper">
+                            <img src="{% static 'algoritma.png' %}" alt="">
+                        </div>
+                        <div class="logo-wrapper">
+                            <img src="{% static 'logo-truck.png' %}" alt="Juan">
+                        </div>
+                        <div class="subtitle">
+                            Pada algoritma search engine truckFinder, kami mengimplementasi teknik information retrieval. Semua kata dan dokumen akan di stemming dan dilakukan penghilangan stopwords(bahasa). Pembuatan vektor query dan vektor dokumen dilakukan dengan perhitungan jumlah kata kemunculan (term frequency raw), tanpa ada ada term weighting. Ranking dokument dilakukan dengan mensort dari kosinus similaritas yang terbesar hingga terkecil.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+<script>
+    const itemsAll = document.querySelectorAll('.item-wrapper')
+
+    itemsAll.forEach(itemsAll => {
+        itemsAll.addEventListener('mouseover', () => {
+            itemsAll.childNodes[1].classList.add('img-darken');
+        })
+        itemsAll.addEventListener('mouseout', () => {
+            itemsAll.childNodes[1].classList.remove('img-darken');
+        })
+    })
+</script>
+</html>

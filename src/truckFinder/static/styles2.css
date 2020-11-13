@@ -21,7 +21,7 @@ body{
 .footerr {
     display: flex;
     justify-content: space-between;
-    padding: 30px;
+    padding: 2.5vh;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -33,6 +33,7 @@ body{
 }
 
 .left-side {
+    
     display: flex;
 }
 .right-side{
@@ -42,11 +43,11 @@ body{
 
 
 .footerr > .left-side > div {
-    margin-right: 20px;
+    
     font-size: 0.9 em;
     text-transform: uppercase;
-
-
+    margin-left: 20px;
+    
 }
 
 .footer-link-wrapper {
