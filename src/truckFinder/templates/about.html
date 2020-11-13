@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="nav-wrapp">
+            <div class="left-side">
+                <div class="nav-link-wrapper">
+                    <a href="/">Home</a>
+                </div>
+                <div class="nav-link-wrapper">
+                    <a href="/concept">Concept</a>
+                </div>
+                <div class="nav-link-wrapper">
+                    <a href="/howto">How to Use</a>
+                </div>
+                <div class="nav-link-wrapper">
+                    <a href="/about" style="color:white;">About Us</a>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="brand">
+                    <div>JUAN LOUIS & ARIA</div>  
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="items-wrapper">
+                <div class="item-wrapper">
+                    <div class="item-img" style="background-image:url(../static/Hayasaka.jpg)"></div>
+                    <div class="img-text-wrapper">
+                        <div class="profpic-wrapper">
+                            <img src="{% static 'aria.jpg' %}" alt="">
+                        </div>
+                        <div class="logo-wrapper">
+                            <img src="{% static 'Aria-logo1.png' %}" alt="Aria">
+                        </div>
+                        <div class="subtitle">
+                            Namaku Aria Berlian. Umurku 19 tahun. Rumahku berada di bagian utara Bandung dan saya belum menikah. Saya berkuliah di Institut Teknologi Bandung dan saya pulang paling lambat setiap hari jam 8 malam. Saya tidak merokok dan saya tidak minum. Saya berada di tempat tidur jam 11 malam, dan memastikan tidur selama 8 jam, apapun yang terjadi. Saya menjelaskan bahwa saya adalah orang yang ingin menjalani kehidupan yang sangat tenang. Saya sangat berhati hati untuk tidak menyusahkan diri dengan musuh, seperti menang dan kalah, yang akan menyebabkan saya kehilangan tidur di malam hari. Itulah cara saya berurusan dengan masyarakat, dan saya tahu itulah yang memberi saya kebahagiaan. Meskipun jika aku bertarung, aku tidak akan kalah dari siapapun. 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-wrapper">
+                    <div class="item-img" style="background-image:url(../static/keqing.jpg)"></div>
+                    <div class="img-text-wrapper">
+                        <div class="profpic-wrapper">
+                            <img src="{% static 'Juan-ayanokoji.jpg' %}" alt="">
+                        </div>
+                        <div class="logo-wrapper">
+                            <img src="{% static 'Juan-logo1.png' %}" alt="Juan">
+                        </div>
+                        <div class="subtitle">
+                            Namaku Juan Louis. 19 tahun. Hobi bermain game dan membaca novel. Tinggal di Tangerang Selatan. Saya adalah seorang mahasiswa Teknik Informatika di Institut Teknologi Bandung. Saya tidak merokok tetapi menonton anime. Saya di depan komputer 24 jam karena komputer saya ada di depan kasur saya. Saya berada di kasur selambat lambatnya jam 4 subuh dan tidak lupa memastikan saya mendapat tidur yang "cukup" tiap harinya. Setiap pagi saya mendengar lagu jepang dan bertempur dengan teks dan garis dan setiap malam saya bertempur di Isekai. Menjadi Teyvaters sejati adalah cita-cita hidup ideal saya. Mencapai jalan hidup ideal memanglah sulit, tetapi saya akan terus bermimpi mengejar jalan hidup ini karena itulah jalan ninjaku. - Naruto 1997-2020
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+<script>
+    const itemsAll = document.querySelectorAll('.item-wrapper')
+
+    itemsAll.forEach(itemsAll => {
+        itemsAll.addEventListener('mouseover', () => {
+            itemsAll.childNodes[1].classList.add('img-darken');
+        })
+        itemsAll.addEventListener('mouseout', () => {
+            itemsAll.childNodes[1].classList.remove('img-darken');
+        })
+    })
+</script>
+</html>
