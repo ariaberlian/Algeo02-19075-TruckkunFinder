@@ -72,25 +72,31 @@ def truckFinder(string):
     for i in range(len(termArray)):
         kamus[termArray[i]] = i
 
+    tempL2 = [0 for j in range(len(termArray))]
+    for w in query:
+        tempL2[kamus[w]] += 1
+    vektorQuery = tempL2.copy()
+    for j in range(len(termArray)):
+        tempL2[j] = tempL2[j] ** 2
+
     for i in range(totalFiles):
 
         tempL1 = [0 for j in range(len(termArray))]
-        tempL2 = [0 for j in range(len(termArray))]
+        
 
         for w in listDok[i][3]:
             tempL1[kamus[w]] += 1  # menginkremen vektor dengan indeks dari dictionary
-        for w in query:
-            tempL2[kamus[w]] += 1
+        
 
         vectorDokumen[i] = tempL1.copy()
-        vektorQuery = tempL2.copy()
+        
 
         c = 0
 
         for j in range(len(termArray)):
             c += vectorDokumen[i][j] * vektorQuery[j]
             tempL1[j] = tempL1[j] ** 2
-            tempL2[j] = tempL2[j] ** 2
+            # tempL2[j] = tempL2[j] ** 2
         
         if query:
             cosine = c / float((sum(tempL1) * sum(tempL2)) ** 0.5)
@@ -116,5 +122,3 @@ def truckFinder(string):
 
 
     return listDok, termArray, vektorQuery, vectorDokumen, tableFrekuensi
-
-
