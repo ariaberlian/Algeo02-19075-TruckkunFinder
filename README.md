@@ -29,9 +29,9 @@ Dengan asumsi pengguna sudah menginstall python:
 1. Masuk ke folder src/truckFinder
 2. Buka command prompt di folder tersebut
 3. ketikkan "pip install -r requirements.txt"
-4. ketikkan "python"
-5. ketikkan "import nltk"
-6. ketikkan "nltk.download()" lalu unduh semua berkas
+4. ketikkan "python" di cmd atau buka python bash
+5. ketikkan "import nltk" lalu tekan enter
+6. ketikkan "nltk.download()",tekan enter lalu unduh semua berkas
 7. ketikkan "python manage.py runserver"
 8. buka browser dan masukan url "http://localhost:8000/" atau "http://127.0.0.1:8000/"
 
