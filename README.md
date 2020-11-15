@@ -1,5 +1,5 @@
-# Project Name
-Truck-kun Finder
+# Truck-kun Finder
+Search engine yang menerapkan prinsip information retrieval yang penentuan dokumen mana yang paling relevan ditentukan oleh nilai kosinus similiaritas.
 
 ## Table of contents
 * [General info](#general-info)
@@ -11,7 +11,8 @@ Truck-kun Finder
 * [Contact](#contact)
 
 ## General info
-Proyek ini dibuat dalam rangka memenuhi tugas besar 2 mata kuliah aljabar linear dan geometri. Proyek ini bertujuan untuk mencari kemiripan tertinggi antara query dan dokumen berdasarkan nilai cosine similiarity.
+Proyek ini dibuat dalam rangka memenuhi tugas besar 2 mata kuliah aljabar linear dan geometri. Proyek ini bertujuan untuk membuat sebuah search engine
+sederhana dengan model ruang vector dan memanfaatkan cosine similarity.
 
 ## Technologies
 * Django - version 3.0
@@ -35,7 +36,6 @@ Dengan asumsi pengguna sudah menginstall python:
 8. buka browser dan masukan url "http://localhost:8000/" atau "http://127.0.0.1:8000/"
 
 ## Features
-List of features ready and TODOs for future development
 * Pencarian dokumen berdasarkan isi dokumen
 * Hasil pencarian terurut berdasarkan kemiripan tertinggi
 * Tabel Terms
@@ -44,9 +44,14 @@ List of features ready and TODOs for future development
 Project is: _finished_
 
 ## Inspiration
-Add here credits. Project inspired by..., based on...
+https://stackoverflow.com/
+https://www.w3schools.com/
+https://medium.com/@ksnugroho/dasar-text-preprocessing-dengan-python-a4fa52608ffe
+https://docs.djangoproject.com/en/3.0/
+https://www.youtube.com/watch?v=hPXNP1NoVNQ&list=PLZS-MHyEIRo6p_RwsWntxMO5QAqIHHHld&ab_channel=KelasTerbuka
+
 
 ## Contact
-Created by Juan Louis Rombetasik (13519075@std.stei.itb.ac.id)
-            Aria B. U. Berlian   (13519115@std.stei.itb.ac.id)
+Created by Truck-kun doko ka group (68)
+Member: Juan Louis Rombetasik (13519075@std.stei.itb.ac.id) & Aria B. U. Berlian (13519115@std.stei.itb.ac.id)
 
