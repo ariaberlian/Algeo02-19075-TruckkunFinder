@@ -39,7 +39,7 @@ Dengan asumsi pengguna sudah menginstall python:
 * Pencarian dokumen berdasarkan isi dokumen
 * Hasil pencarian terurut berdasarkan kemiripan tertinggi
 * Tabel Terms
-
+* Weebs User Friendly
 ## Status
 Project is: _finished_
 
